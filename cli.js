@@ -30,25 +30,25 @@ process.stdin.setRawMode(true);
 process.stdin.on('keypress', (str, key) => {
   if (key.ctrl && key.name === 'c') process.exit();
   switch (key.name.toUppercase()) {
-    case 'w':
-    case 'h':
-    case 'ArrowUp':
-      state = enqueue(state, NORTH);
+    case 'W':
+    case 'K':
+    case 'UP':
+      state = enqueue(state, Snake.NORTH);
       break;
-    case 'a':
-    case 'j':
-    case 'ArrowLeft':
-      state = enqueue(state, WEST);
+    case 'A':
+    case 'H':
+    case 'LEFT':
+      state = enqueue(state, Snake.WEST);
       break;
-    case 's':
-    case 'k':
-    case 'ArrowDown':
-      state = enqueue(state, SOUTH);
+    case 'S':
+    case 'J':
+    case 'DOWN':
+      state = enqueue(state, Snake.SOUTH);
       break;
-    case 'd':
-    case 'l':
-    case 'ArrowRight':
-      state = enqueue(state, EAST);
+    case 'D':
+    case 'L':
+    case 'RIGHT':
+      state = enqueue(state, Snake.EAST);
       break;
   }
 });
