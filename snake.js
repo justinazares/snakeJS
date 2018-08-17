@@ -8,7 +8,7 @@ const EAST = { x: 1, y: 0 };
 const WEST = { x: -1, y: 0 };
 
 // Point Operations
-const pointEq = p1 => p2 => p1.x == p2.x && p1.y == ps.y;
+const pointEq = p1 => p2 => p1.x == p2.x && p1.y == p2.y;
 
 // Booleans
 const willEat = state => pointEq(nextHead(state))(state.apple);

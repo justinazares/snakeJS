@@ -1,4 +1,4 @@
-const readLine = require('readline');
+const readline = require('readline');
 const Snake = require('./snake');
 const base = require('./base');
 
@@ -25,37 +25,37 @@ const Matrix = {
 };
 
 // Key Events
-readLine.emitKeypressEvents(process.stdin);
+readline.emitKeypressEvents(process.stdin);
 process.stdin.setRawMode(true);
 process.stdin.on('keypress', (str, key) => {
   if (key.ctrl && key.name === 'c') process.exit();
-  switch (key.name.toUppercase()) {
+  switch (key.name.toUpperCase()) {
     case 'W':
     case 'K':
     case 'UP':
-      state = enqueue(state, Snake.NORTH);
+      State = Snake.enqueue(State, Snake.NORTH);
       break;
     case 'A':
     case 'H':
     case 'LEFT':
-      state = enqueue(state, Snake.WEST);
+      State = Snake.enqueue(State, Snake.WEST);
       break;
     case 'S':
     case 'J':
     case 'DOWN':
-      state = enqueue(state, Snake.SOUTH);
+      State = Snake.enqueue(State, Snake.SOUTH);
       break;
     case 'D':
     case 'L':
     case 'RIGHT':
-      state = enqueue(state, Snake.EAST);
+      State = Snake.enqueue(State, Snake.EAST);
       break;
   }
 });
 
 // Game Loop
 const show = () =>
-  console.log('\x1bc' + Matrix.toString(Matrix.fromState(State)));
+  console.log('\x1Bc' + Matrix.toString(Matrix.fromState(State)));
 const step = () => (State = Snake.next(State));
 
 // Main
