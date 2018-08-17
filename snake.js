@@ -1,4 +1,4 @@
-const base = require("./base");
+const base = require('./base');
 Object.getOwnPropertyNames(base).map(p => (global[p] = base[p]));
 
 // Constants
@@ -50,8 +50,8 @@ const initialState = () => ({
 });
 
 const next = spec({
-  rows: prop("rows"),
-  cols: prop("cols"),
+  rows: prop('rows'),
+  cols: prop('cols'),
   moves: nextMoves,
   snake: nextSnake,
   apple: nextApple
